@@ -1,10 +1,11 @@
 import React from 'react'
 import { apple, bill, google } from '../assets'
 import styles, {layout } from '../styles'
+import ScrollReveal from './ScrollReveal'
 
 function Billing () {
   return (
-      <section id="product" className={layout.sectionReverse}>
+      <ScrollReveal as="section" id="product" className={layout.sectionReverse} direction="right">
     <div className={layout.sectionImgReverse}>
       <img src={bill} alt="billing" className="w-[100%] h-[100%] relative z-[5]" />
 
@@ -32,7 +33,7 @@ function Billing () {
           object-contain cursor-pointer" />
       </div>
     </div>
-  </section>
+  </ScrollReveal>
   )
 }
 

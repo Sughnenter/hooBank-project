@@ -2,10 +2,11 @@ import React from "react";
 import { card } from "../assets";
 import styles, { layout } from "../styles";
 import Button from "./Button";
+import ScrollReveal from './ScrollReveal'
 
 function CardDeal() {
   return (
-    <section className={layout.section}>
+    <ScrollReveal as="section" className={layout.section} direction="up">
       <div className={layout.sectionInfo}>
         <h2 className={styles.heading2}>Find a better card deal <br className="sm:block hidden" />in few easy steps.</h2>
         <p className={`${styles.paragraph} max-w-[480px] mt-5`}>Arcu tortor, purus in mattis at sed integer faucibus.
@@ -14,9 +15,11 @@ function CardDeal() {
         <Button styles="mt-10" />
       </div>
       <div className={layout.sectionImg}>
-        <img src={card} alt="card" className="w-[100%] h-[100%]" />
+        <ScrollReveal as="div" className="w-full" direction="right">
+          <img src={card} alt="card" className="w-[100%] h-[100%]" />
+        </ScrollReveal>
       </div>
-    </section>
+    </ScrollReveal>
   );
 }
 

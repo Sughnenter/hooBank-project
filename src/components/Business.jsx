@@ -2,6 +2,7 @@ import React from "react";
 import { features } from "../constants";
 import styles, { layout } from "../styles";
 import Button from "./Button";
+import ScrollReveal from './ScrollReveal'
 
 
 function FeatureCard({icon, title, content, index}){
@@ -24,7 +25,7 @@ function FeatureCard({icon, title, content, index}){
 
 function Business() {
   return (
-    <section id="features" className={`${layout.section}`}>
+    <ScrollReveal as="section" id="features" className={`${layout.section}`} direction="up">
       <div className={`${layout.sectionInfo}`}>
         <h2 className={`${styles.heading2}`}>
           You do the business, <br className="xs:block hidden" />
@@ -39,10 +40,12 @@ function Business() {
       </div>
       <div className={`${layout.sectionImg} flex-col`}>
         {features.map((feature, index)=>(
-          <FeatureCard key={feature.id} {...feature} index={index} />
+          <ScrollReveal key={feature.id} as="div" className="w-full" delay={index * 0.06} direction="up">
+            <FeatureCard {...feature} index={index} />
+          </ScrollReveal>
         ))}
       </div>
-    </section>
+    </ScrollReveal>
   );
 }
 
